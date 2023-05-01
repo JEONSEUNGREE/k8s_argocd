@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: guestbook
+  annotations:
+    notifications.argoproj.io/subscribe.on-sync-succeeded.slack: k8s_argocd
+    notifications.argoproj.io/subscribe.on-sync-succeeded.slack: k8s_argocd
+    notifications.argoproj.io/subscribe.on-sync-failed.slack: k8s_argocd
+    notifications.argoproj.io/subscribe.on-sync-running.slack: k8s_argocd
+    notifications.argoproj.io/subscribe.on-sync-status-unknown.slack: k8s_argocd
+    notifications.argoproj.io/subscribe.on-deployed.slack: k8s_argocd
+    notifications.argoproj.io/subscribe.on-health-degraded.slack: k8s_argocd
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: kustomize-guestbook
+    repoURL: https://github.com/argoproj/argocd-example-apps.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated: {}
