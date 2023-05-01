@@ -6,12 +6,12 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: web
+      app: jenkins-app
   template:
     metadata:
-      name: jenkins-pod
+      name: jenkins
       labels:
-        app: jenkins
+        app: jenkins-app
     spec:
       containers:
       - name: jenkins
