@@ -20,3 +20,5 @@ spec:
         ports:
           - name: http-port
             containerPort: 8080
+          - name: jnlp-port
+            containerPort: 50000
