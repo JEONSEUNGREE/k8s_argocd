@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: cicd-service
+  name: jenkins-service
   namespace: jenkins
   labels:
     app: jenkins-app
@@ -12,3 +12,4 @@ spec:
   ports:
     - port: 8080
       targetPort: 80
+      nodePort: 32000
