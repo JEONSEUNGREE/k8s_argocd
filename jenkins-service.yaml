@@ -8,8 +8,7 @@ metadata:
 spec:
   selector:
     app: jenkins-app
-  type: Loadbalancer
+  type: LoadBalancer
   ports:
     - port: 80
       targetPort: 8080
-      nodePort: 32000
